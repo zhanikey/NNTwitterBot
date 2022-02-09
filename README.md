@@ -18,4 +18,4 @@ The file structure of the bot is poorly named:
 - ./submissions: This is where I add my own "curated" memes. It's not actually submissions.
 - ./submissions_completed: After an image is posted, it is moved into this folder.
 
-![Alt](./readmeresources/botscreen.jpg "dont be wasteful, save the planet: After you're done boiling your hot dogs make sure to drink the water. One time I boiled hot dogs in the condensation drippings from my apartment's AC but all that happened was that I got an upset stomach :)")
+![Alt](./readmeresources/hotdogcat.jpg "dont be wasteful, save the planet: After you're done boiling your hot dogs make sure to drink the water. One time I boiled hot dogs in the condensation drippings from my apartment's AC but all that happened was that I got an upset stomach :)")
