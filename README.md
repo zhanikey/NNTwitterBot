@@ -4,7 +4,7 @@ This github repository is forked from the riscmkv NNTwitterBot repo which BASED 
 
 In addition to the neural net that guesses memes this github repository provides a code for telegram bot that generates a pic with neural net prediction on a pic of your choice. 
 
-![](./readmeresources/botscreen.jpg | width=100)
+<img src="readmeresources/botscreen.jpg" alt="zhanike really loves this meme" width="200"/>
 
 ## Initial NNTwitterBot readme
 
