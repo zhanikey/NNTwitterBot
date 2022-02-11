@@ -1,7 +1,7 @@
 import json
 import requests
 import telebot
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 import resnext
 import textwrap
 
@@ -12,16 +12,17 @@ bot = telebot.TeleBot(token)
 
 def ameno(file):
     image = Image.open(file)
-    tool = ImageDraw.Draw(image)
     width = image.size[0]
     height = image.size[1]
-    font = ImageFont.truetype("botresources/Lobster-Regular.ttf", int(width/10))
+    font = ImageFont.truetype("botresources/Lobster-Regular.ttf", int(width/12)) # int(width/10)
     x = int(width / 2 - width / 3.5)
     y = height - int(width/7 * 1.328147)
     predicted_text = resnext.resnext_classify('submissions/temp.jpg')
     predicted_text = ', '.join(predicted_text[0])
     predicted_text = predicted_text.split(',')[0]
-    tool.text((x, y), predicted_text, (255, 255, 255), font=font)
+    tool = ImageDraw.Draw(image)
+    w, h = tool.textsize(predicted_text, font)
+    tool.text(((width-w)/2,(height-h)-40), predicted_text, (255, 255, 255), font=font)
     image.save(f'{download_to}/output.jpg', 'JPEG', quality=100)
 
 download = 'https://api.telegram.org/file/bot' + token + '/'
