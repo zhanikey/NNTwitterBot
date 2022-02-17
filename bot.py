@@ -3,14 +3,13 @@ import requests
 import telebot
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import resnext
-import textwrap
 
 config = json.load(open("config.json", "rb"))
 token = config['token']
 download_to = config['download_to']
 bot = telebot.TeleBot(token)
 
-def ameno(file):
+def meme_guess(file):
     image = Image.open(file)
     width = image.size[0]
     height = image.size[1]
@@ -36,7 +35,7 @@ def meme(message):
         r = requests.get(download + path)
         for chunk in r:
             file.write(chunk)
-    ameno(f'{download_to}/temp.jpg')
+    meme_guess(f'{download_to}/temp.jpg')
     f = open(f'{download_to}/output.jpg', 'rb')
     bot.send_photo(message.chat.id, f, None)
 
